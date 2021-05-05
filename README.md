@@ -17,5 +17,3 @@ Si può usare maven (`mvn test`) o più semplicemente si può usare il supporto 
 
 ![esecuzione test](doc/test.png "Esecuzione Test")
 
-Il codice con la soluzione si trova già nel repository. Per vederlo basta fare un checkout del tag "soluzione". La differenza tra un branch e un tag è che il tag è *fisso*, non può essere spostato come invece accade per il branch.
-
