@@ -13,7 +13,7 @@ Il progetto *Maven* contiene:
 - *StreamLibri*: file con i metodi da implementare per lo svolgimento degli esercizi.
 
 ## Esecuzione dei test
-Si può usare maven (`mvn test`) o più semplicemente si può usare il supporto all'esecuzione dei test fornito dall'IDE. Ad esempio, in VS Code, nella bassa laterale di sinistra è possibile richiamare la colonna "Test" in cui è possibile eseguire tutti i test. I test possono anche essere eseguiti singolarmente.
+Si può usare maven (`mvn test`) o più semplicemente si può usare il supporto all'esecuzione dei test fornito dall'IDE. Ad esempio, in VS Code, nella barra laterale di sinistra è possibile richiamare la colonna "Test" in cui è possibile eseguire tutti i test. I test possono anche essere eseguiti singolarmente.
 
 ![esecuzione test](doc/test.png "Esecuzione Test")
 
