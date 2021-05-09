@@ -66,9 +66,10 @@ public class StreamLibri {
                         .sum();
     }
 
-    public double sommaCostiInDollari(double EUR_USD, List<Libro> list) {
-        
-        return 0.0;
+      public double sommaCostiInDollari(double EUR_USD, List<Libro> list) {
+               return      list.stream()
+                          .map(s->s.getPrezzo()*EUR_USD)
+                          .reduce(0.0,(acc,s)->acc+s);
     }
 
     public Optional<Libro> libroMenoCaroDa12InSu(List<Libro> list) {
@@ -108,7 +109,10 @@ public class StreamLibri {
     }
 
     public Optional<Libro> primoPiuCaroDelPrecedente(List<Libro> list) {
-        return null;
+        return IntStream.rangeClosed(1,list.size()-1)
+               .filter(i->list.get(i).getPrezzo()>list.get(i-1).getPrezzo())
+               .mapToObj(i->new Libro(list.get(i).getTitolo(), list.get(i).getCategoria(), list.get(i).getPrezzo()))
+               .findFirst();     
     }
 
 }
