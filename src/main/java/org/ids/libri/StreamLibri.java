@@ -94,7 +94,9 @@ public class StreamLibri {
 
     //Con intStream creo il numero di libri da 1 fino a n con mapToObj creo una nuova istanza di libro 
     public List<Libro> generaLibriHarryPotterDa15Euro(int n) {
-            return null;
+        return IntStream.rangeClosed(1,n)
+            .mapToObj(i -> new Libro("Harry Potter " + i, Categoria.FANTASY, 15))
+            .collect(Collectors.toList()); 
     }
 
     public List<Libro> mescolaLista(List<Libro> list) {
