@@ -16,30 +16,40 @@ public class StreamLibri {
     // mi appoggio ad un factory method che genera a rotazione
     // la stessa lista di libri
     public List<Libro> generaListaLibri(int n) {
-        return Stream.generate(Libreria::gen).limit(n).collect(Collectors.toList());
+        return Stream.generate(Libreria::gen)
+        .limit(n).
+        collect(Collectors.toList());
     }
 
     public long contaLibriCyberpunk(List<Libro> list) {
-        return list.stream().filter(x -> x.getCategoria() == Categoria.CYBERPUNK).peek(System.out::println).count();
+        return list.stream()
+        .filter(x -> x.getCategoria() == Categoria.CYBERPUNK)
+        .peek(System.out::println)
+        .count();
 
     }
 
     public List<Libro> prezzoCompresoTra12e15(List<Libro> list) {
-        return list.stream().filter(s -> s.getPrezzo() >= 12 && s.getPrezzo() <= 15).peek(System.out::println)
-                .collect(Collectors.toList());
+        return list.stream()
+            .filter(s -> s.getPrezzo() >= 12 && s.getPrezzo() <= 15)
+            .collect(Collectors.toList());
 
     }
 
     public List<String> filtraListaTitoliLibriCyberpunkOppureFantasy(List<Libro> list) {
         return list.stream()
                 .filter(x -> x.getCategoria() == Categoria.CYBERPUNK || x.getCategoria() == Categoria.FANTASY)
-                .peek(System.out::println).map(Libro::getTitolo).collect(Collectors.toList());
+                .peek(System.out::println)
+                .map(Libro::getTitolo)
+                .collect(Collectors.toList());
 
     }
 
     public List<Libro> generaListaLibriCyberpunk(int n) {
-        return Stream.generate(Libreria::gen).filter(x -> x.getCategoria() == Categoria.CYBERPUNK).limit(n)
-                .peek(System.out::println).collect(Collectors.toList());
+        return Stream.generate(Libreria::gen)
+            .filter(x -> x.getCategoria() == Categoria.CYBERPUNK)
+            .limit(n)
+            .peek(System.out::println).collect(Collectors.toList());
 
     }
 
@@ -62,7 +72,6 @@ public class StreamLibri {
     public int sommaCosti_sum(List<Libro> list) {
                 return list.stream()
                         .mapToInt(Libro::getPrezzo)
-                        .peek(System.out::println)
                         .sum();
     }
 
